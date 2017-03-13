@@ -11,7 +11,7 @@ public class TestDictionary {
 		myDic.add("one", 1);
 		myDic.add("four",4);
 		myDic.add("two", 2);
-		myDic.add("one", 1);
+		myDic.add("one", 12);
 		myDic.add("four",4);
 		myDic.add("five",5);
 		myDic.add("five",5);
@@ -19,7 +19,8 @@ public class TestDictionary {
 		myDic.add("six",6);
 		myDic.add("seven",7);
 		myDic.add("seven", 7);
-
+		myDic.removeValue("one", 2);
+		
 		while(keyItr.hasNext()){
 			System.out.println(keyItr.next());
 		}

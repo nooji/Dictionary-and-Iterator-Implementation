@@ -30,6 +30,16 @@ public class VectorDictionary<K,V> implements DictionaryInterface<K,V>{
 		}
 		return temp;
 	}
+	public V removeValue(K key, int index){
+		V temp;
+		if(contains(key) && index < dictionary.elementAt(getIndex(key)).getValue().checkCount()){
+			temp = dictionary.elementAt(getIndex(key)).getValue().removeItem(index);
+		}
+		else{
+			throw new NoSuchElementException("No such element.");
+		}
+		return temp;
+	}
 	@Override
 	public VectorList<V> getValue(K key) {
 		if(contains(key)){
@@ -39,7 +49,6 @@ public class VectorDictionary<K,V> implements DictionaryInterface<K,V>{
 			throw new NoSuchElementException("That key does not exist.");
 		}
 	}
-
 	@Override
 	public boolean contains(K key) {
 		
