@@ -29,7 +29,6 @@ public class VectorDictionary<K,V> implements DictionaryInterface<K,V>{
 			dictionary.remove(getIndex(key));
 		}
 		return temp;
-
 	}
 	@Override
 	public VectorList<V> getValue(K key) {
@@ -43,12 +42,21 @@ public class VectorDictionary<K,V> implements DictionaryInterface<K,V>{
 
 	@Override
 	public boolean contains(K key) {
+		
 		boolean result = false;
-		for(int i = 0; i < dictionary.size();i++){
+		/*for(int i = 0; i < dictionary.size();i++){
 			if(dictionary.elementAt(i).getKey() == key){
 				result = true;
 			}
 		}
+		*/
+		Iterator<K> itr = getKeyIterator();
+		while(itr.hasNext()){
+			if(itr.next() == key){
+				result = true;
+			}
+		}
+		
 		return result;
 	}
 	
@@ -169,8 +177,5 @@ public class VectorDictionary<K,V> implements DictionaryInterface<K,V>{
 		private void addValue(V temp){
 			value.addItem(temp);
 		}
-		
-
 	}
-
 }

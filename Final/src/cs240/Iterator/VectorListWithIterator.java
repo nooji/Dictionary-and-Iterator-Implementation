@@ -64,7 +64,7 @@ private Vector<T> list;
 	public IteratorInterface<T> makeIterator(){
 		return new Iterator();
 	}
-	public class Iterator implements IteratorInterface<T>{
+	private class Iterator implements IteratorInterface<T>{
 		private int position;
 		public Iterator(){
 			position = 0;
